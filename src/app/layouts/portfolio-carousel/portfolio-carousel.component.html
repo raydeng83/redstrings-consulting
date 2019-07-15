@@ -1,0 +1,36 @@
+<section id="portfolio-section" class="portfolio-section gap">
+    <div class="container">
+  <div fxLayout='column' class="text-center mb-5">
+            <div fxFlex.gt-md="60%">
+                <h2 class="title-page">合作医院</h2>
+                <p class="lead w-60"> 这里有全美最一流的医院 </p>
+            </div>
+        </div>
+    <ngu-carousel
+    [inputs]="carouselOptions">
+      <ngu-item NguCarouselItem *ngFor="let p of portfolios">
+          <mat-card class="p-0">
+              <img mat-card-image [src]="p.photo">
+              <mat-card-content>
+                <h4><strong><a href="">{{p.title}}</a></strong></h4>
+                <h5><a href="">{{p.title_e}}</a></h5>
+                  <br>
+                  <p style="font-size: 14px;">
+                  {{p.text}}
+                </p>
+                <!--<mat-divider class="mb-1"></mat-divider>-->
+                  <!--<div>-->
+                    <!--<button mat-icon-button><mat-icon class="text-muted">favorite</mat-icon></button>-->
+                    <!--<span fxFlex></span>-->
+                    <!--<button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>-->
+                <!--</div>-->
+              </mat-card-content>
+            </mat-card>
+
+      </ngu-item>
+      
+      <button mat-fab NguCarouselPrev class='carousel-left'><mat-icon>keyboard_arrow_left</mat-icon></button>
+      <button mat-fab NguCarouselNext class='carousel-right'><mat-icon>keyboard_arrow_right</mat-icon></button>
+  </ngu-carousel>
+    </div>
+  </section>
